@@ -5,7 +5,6 @@ int Average(int Arr[], int iLength)
 {
     int iCnt = 0; 
     int iSum = 0;
-    float iAvg = 0;
 
     for(iCnt = 0; iCnt < iLength; iCnt++)
     {
