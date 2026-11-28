@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int OddCount(int Arr[], int iLength)
+{
+    int iCnt = 0; int iCount = 0;
+    for(iCnt = 0; iCnt < iLength; iCnt++ )
+    {
+        if((Arr[iCnt] % 2) == 1)
+        {
+            iCount++;
+        }
+    }
+     return iCount;
+}
+
+int main()
+{
+    int *ptr = NULL;
+    int iSize = 0;   
+    int iCnt = 0;
+    int iRet = 0;
+
+    printf("Enter number of elements : \n");
+    scanf("%d", &iSize);
+
+    ptr = (int*)malloc(iSize * sizeof(int));
+
+    if(NULL == ptr)       
+    {
+        printf("Error : Unable to allocate memory\n");
+        return EXIT_FAILURE;
+    }
+
+    printf("Enter the Elements : \n");
+
+    for(iCnt = 0; iCnt < iSize; iCnt++)
+    {
+        scanf("%d", &ptr[iCnt]);
+    }
+
+    iRet = OddCount(ptr, iSize);
+
+    printf("Number of odd elements are : %d\n", iRet);
+
+    free(ptr);
+
+
+    return EXIT_SUCCESS;
+}
